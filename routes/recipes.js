@@ -15,7 +15,7 @@ router.get('/recipes', function(req, res) {
         result = recipes.filter(recipe => recipe.id > (page - 1) * limit && recipe.id <= page * limit )
     }
 
-    res.send(JSON.stringify(result));    
+    res.status(200).send(JSON.stringify(result));    
 })
 
 module.exports = router;
