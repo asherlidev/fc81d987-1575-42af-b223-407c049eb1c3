@@ -11,7 +11,8 @@ router.get('/recipes', function(req, res) {
         result = recipes;    
     }
 
-    if (page && limit) {
+    if (page) {
+        limit = 3 || limit;
         result = recipes.filter(recipe => recipe.id > (page - 1) * limit && recipe.id <= page * limit )
     }
 
