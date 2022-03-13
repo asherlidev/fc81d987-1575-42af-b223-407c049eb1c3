@@ -5,10 +5,10 @@ router.get('/recipes', function(req, res) {
     let page = 1 || req.query.page;
     let limit = 3 || req.query.limit;   
     
-    let result = recipes.filter(recipe => recipe.id > (page - 1) * limit && recipe.id <= page * limit )
-    
+    let result = recipes.filter(recipe => recipe.id > (page - 1) * limit && recipe.id <= page * limit );    
 
-    res.status(200).send(JSON.stringify(result));    
+    res.send(JSON.stringify(result));    
+    res.sendStatus(200);
 })
 
 module.exports = router;
